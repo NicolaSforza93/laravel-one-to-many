@@ -17,23 +17,23 @@ class ProjectSeeder extends Seeder
         $projects = [
             [
                 "name_project" => "html-css-animation-filter",
-                "date_creation" => "08-09-2023",
+                "date_creation" => "2023-09-08",
             ],
             [
                 "name_project" => "html-css-boolando",
-                "date_creation" => "06-09-2023",
+                "date_creation" => "2023-09-06",
             ],
             [
                 "name_project" => "html-css-booleaner",
-                "date_creation" => "28-08-2023",
+                "date_creation" => "2023-08-28",
             ],
             [
                 "name_project" => "html-css-bootstrap-dashboard",
-                "date_creation" => "27-09-2023",
+                "date_creation" => "2023-09-27",
             ],
             [
                 "name_project" => "html-css-bootstrap-freelancer",
-                "date_creation" => "25-09-2023",
+                "date_creation" => "2023-09-25",
             ],
         ];
 
