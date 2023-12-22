@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ProjectController extends Controller
 {
@@ -13,7 +15,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::all()
+            ->sortBy('date_creation');
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -28,9 +31,11 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        $data = $request->all();
+        // $data = $request->all();
+
+        $data = $request->validated();
 
         $new_project = Project::create($data);
 
@@ -58,6 +63,13 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        // $data = $request->all();
+
+        $request->validate([
+            'name_project' => ['required', 'max:200', 'string', Rule::unique('projects')->ignore($project->id)],
+            'date_creation' => 'required|date',
+        ]);
+
         $data = $request->all();
 
         $project->update($data);
