@@ -4,7 +4,7 @@
 
 <section>
     <div class="container">
-        <h1>Projects index</h1>
+        <h1>Progetti</h1>
         <table class="table table-striped table-hover">
             <thead>
               <tr>
