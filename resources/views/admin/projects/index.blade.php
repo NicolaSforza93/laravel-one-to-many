@@ -9,6 +9,7 @@
             <thead>
               <tr>
                 <th scope="col">Nome Progetto</th>
+                <th scope="col">Tipologia</th>
                 <th scope="col">Data Creazione</th>
                 <th scope="col" colspan="2" class="text-end">
                     <button class="btn btn-success btn-sm">
@@ -24,6 +25,10 @@
                         <a href="{{ route('admin.projects.show', $project->id) }}">
                             {{ $project->name_project }}
                         </a>
+                    </td>
+                    <td>
+                        {{ isset($project->type) ? $project->type->name : '-' }}
+                        {{-- {{ optional($project->type)->name }} --}}
                     </td>
                     <td>{{ $project->date_creation }}</td>
                     <td class="text-end">
