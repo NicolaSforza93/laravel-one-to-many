@@ -14,6 +14,16 @@
             </div>
 
             <div class="mb-3">
+                <label for="type_id" class="form-label">Tipologia</label>
+                <select class="form-select" name="type_id" id="type_id" aria-label="Floating label select example">
+                    <option>Seleziona una Tipologia</option>
+                    @foreach ($types as $type)
+                        <option @selected( old('type_id') == $type->id ) value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            
+            <div class="mb-3">
                 <label for="basic-url" class="form-label text-uppercase">Data Creazione</label>
                 <input type="date" required class="form-control" name="date_creation" value="{{ old('date_creation') }}">
             </div>
