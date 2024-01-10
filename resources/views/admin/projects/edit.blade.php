@@ -20,7 +20,7 @@
             <div class="mb-3">
                 <label for="type_id" class="form-label">Tipologia</label>
                 <select class="form-select" name="type_id" id="type_id" aria-label="Floating label select example">
-                    <option>Seleziona una Tipologia</option>
+                    <option value="">Seleziona una Tipologia</option>
                     @foreach ($types as $type)
                         <option @selected( old('type_id', optional($project->type)->id ) == $type->id ) value="{{ $type->id }}">{{ $type->name }}</option>
                     @endforeach

@@ -16,7 +16,7 @@
             <div class="mb-3">
                 <label for="type_id" class="form-label">Tipologia</label>
                 <select class="form-select" name="type_id" id="type_id" aria-label="Floating label select example">
-                    <option>Seleziona una Tipologia</option>
+                    <option value="">Seleziona una Tipologia</option>
                     @foreach ($types as $type)
                         <option @selected( old('type_id') == $type->id ) value="{{ $type->id }}">{{ $type->name }}</option>
                     @endforeach
@@ -28,7 +28,7 @@
                 <input type="date" required class="form-control" name="date_creation" value="{{ old('date_creation') }}">
             </div>
             
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary">Aggiungi</button>
                 
         </form>
 
